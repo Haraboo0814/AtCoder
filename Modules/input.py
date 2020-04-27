@@ -1,5 +1,9 @@
-N = int(input())
-S = input()
-A, B, C = map(int, input().split())
-for _ in range(N):
+n = int(input())
+s = input()
+n, m = map(int, input().split())
+
+P, Q = [], []
+for _ in range(n):
     p, q = map(int, input().split())
+    P.append(p)
+    Q.append(q)
