@@ -7,7 +7,7 @@ import unittest
 def resolve():
     n, m, q = map(int, input().split())
     I = list(range(1, m + 1))
-    A = list(map(list, itertools.combinations(I, n)))
+    A = list(map(list, itertools.combinations_with_replacement(I, n)))
     l = len(A)
     ans = [0 for i in range(l)]
     for _ in range(q):
