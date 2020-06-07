@@ -2,6 +2,7 @@ def main():
     n = int(input())
     s = input()
     n, m = map(int, input().split())
+    A = list(map(int, input().split()))
 
     P, Q = [], []
     for _ in range(n):
