@@ -1,0 +1,48 @@
+import sys
+from io import StringIO
+import unittest
+
+
+def resolve():
+    n, x = map(int, input().split())
+    s = list(input())
+    for c in s:
+        if c == 'o':
+            x += 1
+        elif x > 0:
+            x -= 1
+
+    print(x)
+
+
+class TestClass(unittest.TestCase):
+    def assertIO(self, input, output):
+        stdout, stdin = sys.stdout, sys.stdin
+        sys.stdout, sys.stdin = StringIO(), StringIO(input)
+        resolve()
+        sys.stdout.seek(0)
+        out = sys.stdout.read()[:-1]
+        sys.stdout, sys.stdin = stdout, stdin
+        self.assertEqual(out, output)
+
+    def test_入力例_1(self):
+        input = """3 0
+xox"""
+        output = """0"""
+        self.assertIO(input, output)
+
+    def test_入力例_2(self):
+        input = """20 199999
+oooooooooxoooooooooo"""
+        output = """200017"""
+        self.assertIO(input, output)
+
+    def test_入力例_3(self):
+        input = """20 10
+xxxxxxxxxxxxxxxxxxxx"""
+        output = """0"""
+        self.assertIO(input, output)
+
+
+if __name__ == "__main__":
+    unittest.main()
