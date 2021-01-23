@@ -4,6 +4,7 @@ import unittest
 
 """
 https://atcoder.jp/contests/abc189/editorial/537
+x0の場合から順に
 """
 
 
