@@ -1,3 +1,9 @@
+import sys
+import numpy as np
+import math
+
+sys.setrecursionlimit(10**6)
+
 def main():
     n = int(input())
     s = input()
